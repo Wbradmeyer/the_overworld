@@ -36,12 +36,12 @@ body {
 }
 
 #player1 {
-    background: url('Lakitu_King.webp');
+    background: url('Lakito.webp');
     background-repeat: no-repeat;
     background-position:center;
     background-size: cover;
-    width: 10px;
-    height: 10px;
+    width: 20px;
+    height: 20px;
     position: absolute;
 }
 
@@ -50,7 +50,7 @@ body {
 }
 
 #enemy {
-    background: url('inky.gif');
+    background: url('zombie-minecraft.gif');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
