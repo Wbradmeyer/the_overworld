@@ -1,11 +1,68 @@
 body {
-    background-color: yellow;
+    background-color: black;
+    margin: 0px;
+    padding: 0px;
 }
 
-h1 {
-    color: blue;
+.row div {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0px;
 }
 
-h2 {
-    color: red;
+.brick {
+    background-color: blue;
+}
+
+.coin {
+    background: url('coin.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.cherry {
+    background: url('cherry.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 35px;
+    background-color: black;
+}
+
+.empty {
+    background-color: black;
+}
+
+#player1 {
+    background: url('pacman.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+}
+
+#enemy {
+    background: url('inky.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+}
+
+#score {
+    height: 20px;
+    width: 30px;
+    padding: 7px;
+    text-align: center;
+    color: white;
+    border: 1px solid white;
+    position: absolute;
+    top: 10px;
+    left: 310px;
 }
