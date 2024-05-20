@@ -67,21 +67,29 @@ displayEnemy();
 displayScore();
 
 document.onkeydown = function(e){
-    if (e.keyCode == 37 && world[player1.y][player1.x-1] != 2) {
-        player1.x--
-        document.getElementById('player1').style.transform = 'rotateY(0deg)'
-    }
-    else if (e.keyCode == 39 && world[player1.y][player1.x+1] != 2) {
-        player1.x++
-        document.getElementById('player1').style.transform = 'rotateY(180deg)'
-    }
-    else if (e.keyCode == 38 && world[player1.y-1][player1.x] != 2) {
-        player1.y--
-        // document.getElementById('player1').style.transform = 'rotate(270deg)'
-    }
-    else if (e.keyCode == 40 && world[player1.y+1][player1.x] != 2) {
-        player1.y++
-        // document.getElementById('player1').style.transform = 'rotate(90deg)'
+    switch(e.key) {
+        case 'ArrowLeft':
+            if (world[player1.y][player1.x-1] != 2) {
+                player1.x--
+                document.getElementById('player1').style.transform = 'rotateY(0deg)'
+            }
+            break;
+        case 'ArrowRight':
+            if (world[player1.y][player1.x+1] != 2) {
+                player1.x++
+                document.getElementById('player1').style.transform = 'rotateY(180deg)'
+            }
+            break;
+        case 'ArrowUp':
+            if (world[player1.y-1][player1.x] != 2) {
+                player1.y--
+            }
+            break;
+        case 'ArrowDown':
+            if (world[player1.y+1][player1.x] != 2) {
+                player1.y++
+            }
+            break;
     }
 
     if (world[player1.y][player1.x] == 1){
