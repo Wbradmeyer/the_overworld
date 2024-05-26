@@ -20,17 +20,17 @@ body {
 }
 
 .coin {
-    background: url('coin.gif');
+    background: url('coin.ico');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: 15px;
 }
 
-.cherry {
-    background: url('cherry.jpg');
+.mushroom {
+    background: url('mushroom.png');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 35px;
+    background-size: 15px;
     background-color: black;
 }
 
@@ -42,7 +42,7 @@ body {
     background: url('Lakito.webp');
     background-repeat: no-repeat;
     background-position:center;
-    background-size: cover;
+    background-size: 13px;
     width: 20px;
     height: 20px;
     position: absolute;
