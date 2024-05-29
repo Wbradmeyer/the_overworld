@@ -59,6 +59,8 @@ function displayEnemy() {
 
 function displayScore() {
     document.getElementById('score').innerHTML = score;
+    if(score == 610)
+        document.getElementById('game_over').innerHTML += 'Game Over';
 }
 
 displayWorld();

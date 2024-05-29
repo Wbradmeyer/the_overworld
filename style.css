@@ -73,3 +73,10 @@ body {
     top: 10px;
     left: 510px;
 }
+
+#game_over {
+    color: white;
+    position: absolute;
+    top: 70px;
+    left: 510px;
+}
