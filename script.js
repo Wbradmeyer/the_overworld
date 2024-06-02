@@ -16,6 +16,8 @@ var world = [
 
 var score = 0;
 
+var maxPoints = 610;
+
 var player1 = {
     x: 1,
     y: 1
@@ -59,7 +61,7 @@ function displayEnemy() {
 
 function displayScore() {
     document.getElementById('score').innerHTML = score;
-    if(score >= 610)
+    if(score == maxPoints)
         document.getElementById('game_over').innerHTML += 'Game Over';
 }
 
