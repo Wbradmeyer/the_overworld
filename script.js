@@ -110,3 +110,5 @@ document.onkeydown = function(e){
     }
     displayPlayer1()
 }
+
+// add a random timed move to enemy
