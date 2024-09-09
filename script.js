@@ -28,6 +28,9 @@ var enemy = {
     y: 11
 }
 
+var gameOver = false;
+console.log(gameOver)
+
 function displayWorld() {
     var output = ''
 
@@ -61,8 +64,17 @@ function displayEnemy() {
 
 function displayScore() {
     document.getElementById('score').innerHTML = score;
-    if(score == maxPoints)
+    if(score == maxPoints){
         document.getElementById('game_over').innerHTML += 'Game Over';
+        gameOver = true;
+    }
+}
+
+function checkGameOver() {
+    if(player1.x === enemy.x && player1.y === enemy.y){
+        gameOver = true;
+        document.getElementById('game_over').innerHTML += 'Game Over';
+    }
 }
 
 displayWorld();
@@ -70,7 +82,10 @@ displayPlayer1();
 displayEnemy();
 displayScore();
 
+
 document.onkeydown = function(e){
+    if(gameOver) return
+
     switch(e.key) {
         case 'ArrowLeft':
             if (world[player1.y][player1.x-1] != 2) {
@@ -108,11 +123,13 @@ document.onkeydown = function(e){
         displayWorld();
         displayScore();
     }
-    displayPlayer1()
+    displayPlayer1();
+    checkGameOver();
 }
 
-// add a random timed move to enemy
 function moveEnemy(){
+    if(gameOver) return;
+
     let randDirection = Math.floor(Math.random() * 4)
 
     switch(randDirection){
@@ -138,6 +155,9 @@ function moveEnemy(){
             break;
     }
     displayEnemy();
+    checkGameOver();
 }
 
-setInterval(moveEnemy, 500);
+setInterval(function(){
+    if(!gameOver) moveEnemy();
+}, 500);
