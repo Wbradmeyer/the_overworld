@@ -112,3 +112,32 @@ document.onkeydown = function(e){
 }
 
 // add a random timed move to enemy
+function moveEnemy(){
+    let randDirection = Math.floor(Math.random() * 4)
+
+    switch(randDirection){
+        case 0:
+            if(world[enemy.y][enemy.x-1] != 2){
+                enemy.x--;
+            }
+            break;
+        case 1:
+            if(world[enemy.y][enemy.x+1] != 2){
+                enemy.x++;
+            }            
+            break;
+        case 2:
+            if(world[enemy.y-1][enemy.x] != 2){
+                enemy.y--;
+            }            
+            break;
+        case 3:
+            if(world[enemy.y+1][enemy.x] != 2){
+                enemy.y++;
+            }            
+            break;
+    }
+    displayEnemy();
+}
+
+setInterval(moveEnemy, 500);
