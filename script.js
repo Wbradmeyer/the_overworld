@@ -64,10 +64,6 @@ function displayPlayer1() {
     document.getElementById('player1').style.top = player1.y*20+"px";
 }
 
-// function displayEnemy() {
-//     document.getElementById('enemy').style.left = enemy.x*20+"px";
-//     document.getElementById('enemy').style.top = enemy.y*20+"px";
-// }
 function displayEnemy(enemy) {
     document.getElementById(enemy.name).style.left = enemy.x*20+"px";
     document.getElementById(enemy.name).style.top = enemy.y*20+"px";
@@ -91,7 +87,6 @@ function checkGameOver() {
 
 displayWorld();
 displayPlayer1();
-// displayEnemy();
 displayEnemy(enemy1);
 displayEnemy(enemy2);
 displayScore();
@@ -141,7 +136,6 @@ document.onkeydown = function(e){
     checkGameOver();
 }
 
-// function moveEnemy(){
 function moveEnemy(enemy){
     if(gameOver) return;
 
@@ -169,14 +163,9 @@ function moveEnemy(enemy){
             }            
             break;
     }
-    // displayEnemy();
     displayEnemy(enemy);
     checkGameOver();
 }
-
-// setInterval(function(){
-//     if(!gameOver) moveEnemy();
-// }, 500);
 
 setInterval(function(){
     if(!gameOver){
