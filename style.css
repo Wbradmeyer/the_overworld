@@ -52,7 +52,7 @@ body {
     transform: rotateY(180deg);
 }
 
-#enemy {
+#enemy1, #enemy2 {
     background: url('zombie-minecraft.gif');
     background-repeat: no-repeat;
     background-position: center;

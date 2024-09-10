@@ -23,9 +23,16 @@ var player1 = {
     y: 1
 }
 
-var enemy = {
+var enemy1 = {
     x: 11,
-    y: 11
+    y: 11,
+    name: 'enemy1'
+}
+
+var enemy2 = {
+    x: 1,
+    y: 11,
+    name: 'enemy2'
 }
 
 var gameOver = false;
@@ -57,9 +64,13 @@ function displayPlayer1() {
     document.getElementById('player1').style.top = player1.y*20+"px";
 }
 
-function displayEnemy() {
-    document.getElementById('enemy').style.left = enemy.x*20+"px";
-    document.getElementById('enemy').style.top = enemy.y*20+"px";
+// function displayEnemy() {
+//     document.getElementById('enemy').style.left = enemy.x*20+"px";
+//     document.getElementById('enemy').style.top = enemy.y*20+"px";
+// }
+function displayEnemy(enemy) {
+    document.getElementById(enemy.name).style.left = enemy.x*20+"px";
+    document.getElementById(enemy.name).style.top = enemy.y*20+"px";
 }
 
 function displayScore() {
@@ -71,7 +82,8 @@ function displayScore() {
 }
 
 function checkGameOver() {
-    if(player1.x === enemy.x && player1.y === enemy.y){
+    if((player1.x === enemy1.x && player1.y === enemy1.y) || 
+    (player1.x === enemy2.x && player1.y === enemy2.y)){
         gameOver = true;
         document.getElementById('game_over').innerHTML += 'Game Over';
     }
@@ -79,7 +91,9 @@ function checkGameOver() {
 
 displayWorld();
 displayPlayer1();
-displayEnemy();
+// displayEnemy();
+displayEnemy(enemy1);
+displayEnemy(enemy2);
 displayScore();
 
 
@@ -127,7 +141,8 @@ document.onkeydown = function(e){
     checkGameOver();
 }
 
-function moveEnemy(){
+// function moveEnemy(){
+function moveEnemy(enemy){
     if(gameOver) return;
 
     let randDirection = Math.floor(Math.random() * 4)
@@ -154,10 +169,18 @@ function moveEnemy(){
             }            
             break;
     }
-    displayEnemy();
+    // displayEnemy();
+    displayEnemy(enemy);
     checkGameOver();
 }
 
+// setInterval(function(){
+//     if(!gameOver) moveEnemy();
+// }, 500);
+
 setInterval(function(){
-    if(!gameOver) moveEnemy();
+    if(!gameOver){
+        moveEnemy(enemy1);
+        moveEnemy(enemy2);
+    } 
 }, 500);
