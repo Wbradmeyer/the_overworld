@@ -72,7 +72,7 @@ function displayEnemy(enemy) {
 function displayScore() {
     document.getElementById('score').innerHTML = score;
     if(score == maxPoints){
-        document.getElementById('game_over').innerHTML += 'Game Over';
+        document.getElementById('game_over').innerHTML += 'You Win!';
         gameOver = true;
     }
 }
