@@ -46,6 +46,7 @@ body {
     width: 20px;
     height: 20px;
     position: absolute;
+    opacity: 1.0;
 }
 
 #player1:hover {

@@ -88,6 +88,22 @@ function checkGameOver() {
     (player1.x === enemy2.x && player1.y === enemy2.y) || 
     (player1.x === enemy3.x && player1.y === enemy3.y)){
         gameOver = true;
+        let playerElement = document.getElementById('player1')
+        playerElement.style.opacity = playerElement.style.opacity || "1";
+        const dissolveInterval = setInterval(characterDisappear, 200)
+
+        function characterDisappear() {
+            let currentOpacity = parseFloat(playerElement.style.opacity);
+
+            if(currentOpacity <= 0){
+                clearInterval(dissolveInterval)
+                playerElement.style.opacity = 0;
+                console.log('canceled')
+            } else {
+                playerElement.style.opacity = (currentOpacity - 0.1).toFixed(1);
+                console.log('fading')
+            }
+        }
         document.getElementById('game_over').innerHTML += 'Game Over';
     }
 }
