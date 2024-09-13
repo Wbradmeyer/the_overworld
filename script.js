@@ -30,9 +30,15 @@ var enemy1 = {
 }
 
 var enemy2 = {
-    x: 1,
+    x: 12,
     y: 11,
     name: 'enemy2'
+}
+
+var enemy3 = {
+    x: 13,
+    y: 11,
+    name: 'enemy3'
 }
 
 var gameOver = false;
@@ -79,7 +85,8 @@ function displayScore() {
 
 function checkGameOver() {
     if((player1.x === enemy1.x && player1.y === enemy1.y) || 
-    (player1.x === enemy2.x && player1.y === enemy2.y)){
+    (player1.x === enemy2.x && player1.y === enemy2.y) || 
+    (player1.x === enemy3.x && player1.y === enemy3.y)){
         gameOver = true;
         document.getElementById('game_over').innerHTML += 'Game Over';
     }
@@ -89,6 +96,7 @@ displayWorld();
 displayPlayer1();
 displayEnemy(enemy1);
 displayEnemy(enemy2);
+displayEnemy(enemy3);
 displayScore();
 
 
@@ -171,5 +179,6 @@ setInterval(function(){
     if(!gameOver){
         moveEnemy(enemy1);
         moveEnemy(enemy2);
+        moveEnemy(enemy3);
     } 
 }, 500);
